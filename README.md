@@ -1,6 +1,6 @@
-# 
+# Testing in Software Engineering
 
-
+Why tests actually pay off, the different kinds worth writing, and the habits â€” TDD, coverage, flaky-test fixes, CI â€” that keep a suite trustworthy.
 
 Part of the [Yaaddi](https://github.com/yaaddi-courses) course catalog — a
 spaced-repetition flashcard course, ready to build and validate with the

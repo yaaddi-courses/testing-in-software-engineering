@@ -4,224 +4,224 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 3,1,true_false,exercise,2,Tests give you confidence to change code.,,true,,,
 4,1,select_blank,exercise,2,Tests catch mistakes before a ___ finds them.,user|manager|robot,0,,,
 5,1,multiple_choice,exercise,2,What does testing let you do safely?,Change code|Skip reviews|Delete logs,0,,,
-6,2,true_false,preview,7,A production bug costs more than catching it early.,,true,cards/card_6.png,,
+6,2,true_false,preview,7,A production bug costs more than catching it early.,,true,cards/card_6.png,,"This is absolutely true because fixing a bug in development is quick, but dealing with it after users find it involves emergency patches, reputation damage, and lost time."
 7,2,multiple_choice,main,,Where is a bug cheapest to fix?,Before shipping|In prod|Later,0,,,"Skipping tests feels faster in the moment, but a bug caught after shipping costs far more time, money, and user trust than one caught before shipping."
 8,2,true_false,exercise,7,Skipping tests always saves time overall.,,false,,,"It feels faster short term, but a production bug usually costs more."
-9,2,select_blank,exercise,7,A production bug costs user ___.,trust|money only|nothing,0,,,
-10,2,multiple_choice,exercise,7,What does skipping tests feel like at first?,Faster|Slower|The same,0,,,
-11,3,true_false,preview,12,A unit test checks one small piece of code.,,true,,,
+9,2,select_blank,exercise,7,A production bug costs user ___.,trust|money only|nothing,0,,,"While bugs might cause financial loss, the most damaging and hardest thing to recover is the user's faith in your product's reliability. Trust is the core commodity you are selling."
+10,2,multiple_choice,exercise,7,What does skipping tests feel like at first?,Faster|Slower|The same,0,,,"Because you skip running the comprehensive test suite, your local development cycle will feel much faster initially. However, this false sense of speed quickly leads to more bugs and slower debugging later on."
+11,3,true_false,preview,12,A unit test checks one small piece of code.,,true,,,"That's exactly right; unit tests are designed to test the smallest possible piece of code, like a single function or method, in isolation."
 12,3,multiple_choice,main,,What does a unit test check?,One piece|Whole app|User flow,0,,,"It targets a single function, in isolation from the rest of the system — no real database, network, or other components involved."
-13,3,true_false,exercise,12,A unit test runs in isolation from the system.,,true,,,
-14,3,select_blank,exercise,12,A unit test often targets a single ___.,function|server|browser,0,,,
-15,3,multiple_choice,exercise,12,What scope does a unit test have?,"Small, isolated|Whole system|Cross-team",0,,,
-16,4,true_false,preview,17,An integration test checks multiple parts together.,,true,,,
+13,3,true_false,exercise,12,A unit test runs in isolation from the system.,,true,,,Correct. The key idea behind unit testing is that you should be able to run it without needing the entire system or other components to be working first.
+14,3,select_blank,exercise,12,A unit test often targets a single ___.,function|server|browser,0,,,"Unit tests are meant to test very specific, small units of code, like a function, rather than large parts like an entire server or browser environment."
+15,3,multiple_choice,exercise,12,What scope does a unit test have?,"Small, isolated|Whole system|Cross-team",0,,,"A unit test is intentionally narrow in scope; it focuses only on the smallest component possible, keeping it isolated from the rest of the application."
+16,4,true_false,preview,17,An integration test checks multiple parts together.,,true,,,That's right; integration tests specifically verify that different modules or services work correctly when combined and interacting with each other.
 17,4,multiple_choice,main,,What does an integration test check?,Parts together|One function|User memory,0,,,"That might mean your code talking to a real database, or two services calling each other for real — a wider scope than a single function."
 18,4,true_false,exercise,17,An integration test can involve a real database.,,true,,,
-19,4,select_blank,exercise,17,An integration test checks ___ parts together.,multiple|zero|no,0,,,
-20,4,multiple_choice,exercise,17,How does an integration test differ from unit tests?,Wider scope|Narrower scope|Same scope,0,,,
-21,5,true_false,preview,22,An end-to-end test acts like a real user.,,true,,,
+19,4,select_blank,exercise,17,An integration test checks ___ parts together.,multiple|zero|no,0,,,"Integration tests are meant to check the interactions between several components, confirming that they work correctly as a group rather than individually."
+20,4,multiple_choice,exercise,17,How does an integration test differ from unit tests?,Wider scope|Narrower scope|Same scope,0,,,"Integration tests have a wider scope because they test how multiple connected parts interact, whereas unit tests keep their focus very narrow on single components."
+21,5,true_false,preview,22,An end-to-end test acts like a real user.,,true,,,"End-to-end tests simulate the entire journey a person takes through an application, making them very close to actual user behavior."
 22,5,multiple_choice,main,,What does an end-to-end test simulate?,Real user|One function|Database only,0,,,"It runs the full flow from start to finish, exactly like a real user clicking through the app — not just one function or one database call."
-23,5,true_false,exercise,22,An end-to-end test covers a full user flow.,,true,,,
-24,5,select_blank,exercise,22,End-to-end tests drive the whole ___.,app|function|variable,0,,,
-25,5,multiple_choice,exercise,22,Which test type has the widest scope?,End-to-end|Unit|Integration,0,,,
-26,6,true_false,preview,27,The pyramid favors many fast unit tests.,,true,cards/card_26.png,,
+23,5,true_false,exercise,22,An end-to-end test covers a full user flow.,,true,,,"By testing the entire sequence from start to finish, an E2E test ensures that every step of a critical business process works as expected."
+24,5,select_blank,exercise,22,End-to-end tests drive the whole ___.,app|function|variable,0,,,"Since they simulate a user journey, end-to-end tests validate the entire application experience, not just isolated functions or variables."
+25,5,multiple_choice,exercise,22,Which test type has the widest scope?,End-to-end|Unit|Integration,0,,,"End-to-end tests simulate a complete user journey across the entire application, giving them the broadest scope. Unit and integration tests are much more limited, checking only isolated code or specific component interactions."
+26,6,true_false,preview,27,The pyramid favors many fast unit tests.,,true,cards/card_26.png,,"The test pyramid structure emphasizes unit tests at the base because they are fast, cheap to write, and provide immediate feedback on small, isolated pieces of logic. This is much more efficient than relying heavily on slower end-to-end checks."
 27,6,multiple_choice,main,,Which test type should you have the most of?,Unit tests|End-to-end tests|Integration tests,0,,,"Unit tests are fast, so you want lots of them; end-to-end tests are the slowest, so you want only a few — flip that ratio and the whole suite crawls."
-28,6,true_false,exercise,27,End-to-end tests are usually the slowest to run.,,true,,,
+28,6,true_false,exercise,27,End-to-end tests are usually the slowest to run.,,true,,,"Because E2E tests must interact with every layer—the UI, the network, and the database—they involve many dependencies that slow down execution significantly compared to fast unit tests."
 29,6,select_blank,exercise,27,The pyramid favors many ___ unit tests.,fast|slow|flaky,0,,,
 30,6,multiple_choice,exercise,27,What happens with an inverted pyramid?,Slow suite|Faster feedback|No change,0,,,
 31,7,multiple_choice,preview,32,What does Arrange set up?,Test data|The code|The result,0,cards/card_31.png,,
 32,7,multiple_choice,main,,What does the Act step do?,Runs code|Setup data|Checks result,0,,,"Arrange sets up the test data, Act runs the code being tested, and Assert checks the result — always in that order."
-33,7,true_false,exercise,32,Assert checks whether the result is correct.,,true,,,
-34,7,select_blank,exercise,32,___ sets up the test data first.,Arrange|Act|Assert,0,,,
-35,7,multiple_choice,exercise,32,What order do the three steps go in?,Arrange first|Assert first|Random order,0,,,
+33,7,true_false,exercise,32,Assert checks whether the result is correct.,,true,,,"Yes, asserting is specifically the step where you check if the actual result matches what you expected; it’s how you confirm success or failure."
+34,7,select_blank,exercise,32,___ sets up the test data first.,Arrange|Act|Assert,0,,,Arrange is the setup phase where you prepare all necessary variables and mock data needed for the test to run.
+35,7,multiple_choice,exercise,32,What order do the three steps go in?,Arrange first|Assert first|Random order,0,,,You must always start with Arrange because you have to set up your test environment and data before you can execute or check anything.
 36,8,true_false,preview,37,A good test checks one clear thing.,,true,,,
 37,8,multiple_choice,main,,What should a good test check?,One thing|Everything|Nothing,0,,,"A good test is also fast and reliable, not flaky — so when it fails, you immediately know what broke."
 38,8,true_false,exercise,37,"A good test should be reliable, not flaky.",,true,,,
 39,8,select_blank,exercise,37,A good failing test tells you what ___.,broke|yesterday|boss thinks,0,,,
 40,8,multiple_choice,exercise,37,What trait makes a test trustworthy?,Reliability|Long runtime|Vagueness,0,,,
-41,9,true_false,preview,42,A good test name describes the behavior tested.,,true,cards/card_41.png,,
+41,9,true_false,preview,42,A good test name describes the behavior tested.,,true,cards/card_41.png,,"A good test name acts as documentation, telling you exactly what scenario the test covers and what outcome it expects without needing to look at the code body itself."
 42,9,multiple_choice,main,,What should a test name describe?,The behavior|Line count|The author,0,,,"A specific name like should_reject_empty_email — not vague, not test1 — means a failure is understandable without even opening the code."
-43,9,true_false,exercise,42,A clear name explains a failure without opening code.,,true,,,
-44,9,select_blank,exercise,42,"A good name describes ___, not implementation.",behavior|line numbers|file size,0,,,
-45,9,multiple_choice,exercise,42,Why avoid a vague test name like test1?,Hides intent|Runs slower|Breaks builds,0,,,
-46,10,true_false,preview,47,A specific assertion gives a clearer failure message.,,true,,,
+43,9,true_false,exercise,42,A clear name explains a failure without opening code.,,true,,,"When a test fails with a clear name, the failure message immediately tells you *what* went wrong (e.g., 'User cannot log in with bad password') rather than just pointing to a line of code."
+44,9,select_blank,exercise,42,"A good name describes ___, not implementation.",behavior|line numbers|file size,0,,,"The purpose of testing is validating what the system does (its behavior), not how it achieves it; focusing on implementation details makes tests brittle and hard to maintain."
+45,9,multiple_choice,exercise,42,Why avoid a vague test name like test1?,Hides intent|Runs slower|Breaks builds,0,,,"Vague names like test1 hide the intent, making it impossible for future developers to understand what functionality this specific test validates."
+46,10,true_false,preview,47,A specific assertion gives a clearer failure message.,,true,,,"When an assertion is specific, it tells you precisely which condition failed and what values were involved. This context makes debugging much faster than relying on a generic failure message."
 47,10,multiple_choice,main,,Why prefer a specific assertion?,Clearer failures|Faster tests|Fewer lines,0,,,"expect(result).toBeTruthy() only tells you something was falsy, not what actually broke — a specific assertion names the real problem."
 48,10,true_false,exercise,47,A vague truthy assertion gives a clear failure message.,,false,,,"It only tells you something was falsy, not what actually went wrong."
-49,10,select_blank,exercise,47,A specific assertion improves the failure ___.,message|speed|author,0,,,
-50,10,multiple_choice,exercise,47,What does a vague assertion hide?,What broke|Test name|File path,0,,,
-51,11,multiple_choice,preview,52,What does a stub return?,Canned answers|Real calls|Nothing extra,0,cards/card_51.png,,
+49,10,select_blank,exercise,47,A specific assertion improves the failure ___.,message|speed|author,0,,,"Being specific ensures that when a test fails, the resulting error message contains enough context for you to immediately understand what went wrong. It improves the diagnostic quality of the failure report."
+50,10,multiple_choice,exercise,47,What does a vague assertion hide?,What broke|Test name|File path,0,,,"When assertions are too general or vague, they hide the specific root cause of a failure. This lack of detail forces you to spend extra time figuring out exactly what condition was violated."
+51,11,multiple_choice,preview,52,What does a stub return?,Canned answers|Real calls|Nothing extra,0,cards/card_51.png,,A stub is meant to replace a dependency with canned answers so you can test your code without needing the actual system running.
 52,11,multiple_choice,main,,What does a mock check beyond a stub?,How called|Nothing extra|File size,0,,,"A stub just returns a canned answer. A mock goes further and checks it was called correctly. A fake is a full, working, simplified version of the real thing, and a spy records the real calls that happened."
-53,11,true_false,exercise,52,"A fake is a working, simplified version of something.",,true,,,
-54,11,select_blank,exercise,52,A ___ returns canned answers only.,stub|spy|fake,0,,,
-55,11,multiple_choice,exercise,52,What does a spy record?,Real calls|Nothing|Only errors,0,,,
-56,12,true_false,preview,57,Mocking can isolate a flaky dependency.,,true,cards/card_56.png,,
+53,11,true_false,exercise,52,"A fake is a working, simplified version of something.",,true,,,"That's correct; a fake provides enough functionality to pass tests, acting as a simplified stand-in for a complex component."
+54,11,select_blank,exercise,52,A ___ returns canned answers only.,stub|spy|fake,0,,,"A stub is specifically designed to bypass real logic by returning predetermined canned answers, unlike a fake which might have some limited working functionality."
+55,11,multiple_choice,exercise,52,What does a spy record?,Real calls|Nothing|Only errors,0,,,"A spy wraps a real object to record its actual method calls, allowing you to verify if certain interactions occurred without changing the original behavior."
+56,12,true_false,preview,57,Mocking can isolate a flaky dependency.,,true,cards/card_56.png,,"If a dependency is flaky or unpredictable, mocking it allows you to control its output completely, ensuring your test runs consistently every time."
 57,12,multiple_choice,main,,What can over-mocking hide?,Real bugs|Test names|File paths,0,,,Mocking is great for isolating a slow or flaky dependency — but over-mocking hides real bugs by testing your assumptions instead of the real system.
-58,12,true_false,exercise,57,Mocking can help isolate a slow dependency.,,true,,,
-59,12,select_blank,exercise,57,"Over-mocking tests your ___, not reality.",assumptions|speed|file size,0,,,
-60,12,multiple_choice,exercise,57,When is mocking a good idea?,Flaky dependency|Never|Always,0,,,
-61,13,true_false,preview,62,Coverage only shows which lines ran.,,true,cards/card_61.png,,
+58,12,true_false,exercise,57,Mocking can help isolate a slow dependency.,,true,,,"By replacing slow external calls with instant mocks, you prevent the entire test suite from running slowly and keep focus on the logic being tested."
+59,12,select_blank,exercise,57,"Over-mocking tests your ___, not reality.",assumptions|speed|file size,0,,,"When you mock too much, your tests only validate your own internal expectations and assumptions about behavior rather than actual system integration."
+60,12,multiple_choice,exercise,57,When is mocking a good idea?,Flaky dependency|Never|Always,0,,,"Mocking is most valuable when dealing with flaky dependencies, like external APIs or databases that might fail unpredictably; this keeps your unit tests fast and reliable without needing the real service to be available."
+61,13,true_false,preview,62,Coverage only shows which lines ran.,,true,cards/card_61.png,,"That's correct. Code coverage tools measure execution by tracking whether a specific line of code was hit during the test suite, not overall functionality."
 62,13,select_blank,main,,100% coverage only shows which lines ___.,ran|passed|matter|failed,0,,,"Coverage only shows lines ran, not that the outcome was actually checked."
-63,13,select_blank,exercise,62,Coverage measures which ___ ran during tests.,lines|files|teams,0,,,
-64,13,multiple_choice,exercise,62,What can coverage miss?,Meaningful checks|File names|Line numbers,0,,,
-65,13,true_false,exercise,62,A line can run without being properly checked.,,true,,,
-66,14,multiple_choice,preview,67,Which is a classic boundary case?,Zero|The middle|A comment,0,cards/card_66.png,,
+63,13,select_blank,exercise,62,Coverage measures which ___ ran during tests.,lines|files|teams,0,,,"Code coverage is specifically designed to measure which lines of code were executed during your tests, giving you a granular view of test thoroughness."
+64,13,multiple_choice,exercise,62,What can coverage miss?,Meaningful checks|File names|Line numbers,0,,,"Coverage only tells you if the code was executed, not whether that execution validated a specific business rule or handled an edge case properly."
+65,13,true_false,exercise,62,A line can run without being properly checked.,,true,,,"Yes, running a line of code doesn't prove it was tested correctly; the test might just pass through the line without actually validating its logic or handling potential errors."
+66,14,multiple_choice,preview,67,Which is a classic boundary case?,Zero|The middle|A comment,0,cards/card_66.png,,"Boundary cases involve testing the limits of input data, and zero (along with null or empty values) is one of the most fundamental boundaries that must be checked."
 67,14,multiple_choice,main,,Where do bugs love to hide?,Boundaries|The middle|Comments,0,,,"Classic boundaries include an empty list, zero, and negative numbers — the spots the happy path usually skips right over."
-68,14,true_false,exercise,67,An empty list is a common edge case.,,true,,,
-69,14,select_blank,exercise,67,Zero is a classic ___ case to test.,boundary|average|typical,0,,,
-70,14,multiple_choice,exercise,67,What is the happy path missing?,Edge cases|Type hints|Comments,0,,,
-71,15,true_false,preview,72,"Bad input is worth testing, not just success.",,true,cards/card_71.png,,
+68,14,true_false,exercise,67,An empty list is a common edge case.,,true,,,True; empty lists are a classic edge case because most code assumes there will be elements to process or iterate over. Failing to check for an empty list often results in index errors.
+69,14,select_blank,exercise,67,Zero is a classic ___ case to test.,boundary|average|typical,0,,,"Zero is a boundary case because it represents the critical transition point between positive and negative numbers, requiring specific testing logic."
+70,14,multiple_choice,exercise,67,What is the happy path missing?,Edge cases|Type hints|Comments,0,,,"The happy path describes the ideal, expected flow of execution, but it inherently misses any unusual or failure conditions that are covered by edge cases."
+71,15,true_false,preview,72,"Bad input is worth testing, not just success.",,true,cards/card_71.png,,"Testing for bad inputs is crucial because real-world users often provide unexpected or malformed data, which can break the system even if the 'happy path' works."
 72,15,multiple_choice,main,,What should you also test besides success?,Failure paths|File names|Comments,0,,,"That means testing a failed call, a network timeout, or bad input — not only the happy path where everything works."
-73,15,true_false,exercise,72,A network timeout is worth testing for.,,true,,,
-74,15,select_blank,exercise,72,Test what happens with ___ input too.,bad|expected|typical,0,,,
-75,15,multiple_choice,exercise,72,Give an example failure to test.,A timeout|Fast reply|Green build,0,,,
-76,16,true_false,preview,77,TDD starts with a failing test.,,true,cards/card_76.png,,
+73,15,true_false,exercise,72,A network timeout is worth testing for.,,true,,,Network timeouts are common failure points in distributed systems; testing them ensures your application handles disconnections gracefully without crashing or losing data.
+74,15,select_blank,exercise,72,Test what happens with ___ input too.,bad|expected|typical,0,,,"You must test with bad input because the system needs to be robust enough to handle unexpected, malformed, or boundary-condition data provided by users."
+75,15,multiple_choice,exercise,72,Give an example failure to test.,A timeout|Fast reply|Green build,0,,,"A timeout is a failure state that your application should be designed to catch and recover from gracefully, making it an excellent candidate for negative testing."
+76,16,true_false,preview,77,TDD starts with a failing test.,,true,cards/card_76.png,,"This is fundamental to TDD; you must write a test that fails first (the Red phase) to prove the functionality doesn't exist yet, which then guides your implementation."
 77,16,multiple_choice,main,,What comes first in the TDD cycle?,Failing test|Refactoring|Passing app,0,,,"Red means the test fails, green means it now passes, and refactor is cleaning the code up afterward — always in that order."
-78,16,true_false,exercise,77,Green means the test now passes.,,true,,,
-79,16,select_blank,exercise,77,___ cleans up code after it passes.,Refactor|Red|Green,0,,,
-80,16,multiple_choice,exercise,77,What does red mean in the TDD cycle?,Test failing|Test passed|Code deleted,0,,,
-81,17,true_false,preview,82,"TDD works well for clear, understood logic.",,true,cards/card_81.png,,
+78,16,true_false,exercise,77,Green means the test now passes.,,true,,,"Exactly, when your code makes the test pass and the suite turns green, you know that specific piece of functionality is working as intended."
+79,16,select_blank,exercise,77,___ cleans up code after it passes.,Refactor|Red|Green,0,,,"Refactoring is the cleanup phase where you improve the internal structure and readability of your code without changing its external behavior, which happens after it passes the tests."
+80,16,multiple_choice,exercise,77,What does red mean in the TDD cycle?,Test failing|Test passed|Code deleted,0,,,"Red means you wrote a test that fails, which is actually the goal of the first step in TDD because it proves the feature doesn't exist yet."
+81,17,true_false,preview,82,"TDD works well for clear, understood logic.",,true,cards/card_81.png,,TDD shines when logic is clear because you have defined requirements to write tests against. This structured approach prevents guesswork about what needs to be built.
 82,17,multiple_choice,main,,When does TDD tend to slow you down?,Unclear design|Clear logic|Bug fixes,0,,,"It shines once the logic is clear and well-understood, but can slow you down while you're still exploring a rough, unclear prototype."
-83,17,true_false,exercise,82,"TDD works well for clear, well-understood logic.",,true,,,
-84,17,select_blank,exercise,82,TDD can slow down early ___ work.,exploratory|refactoring|deployment,0,,,
-85,17,multiple_choice,exercise,82,What kind of work suits TDD best?,Known logic|Rough sketch|Guesswork,0,,,
-86,18,true_false,preview,87,A real database test catches issues a fake misses.,,true,cards/card_86.png,,
+83,17,true_false,exercise,82,"TDD works well for clear, well-understood logic.",,true,,,"When the goals are well-understood, TDD provides a solid framework by forcing you to think in terms of testable requirements first. It's most effective when the destination is known."
+84,17,select_blank,exercise,82,TDD can slow down early ___ work.,exploratory|refactoring|deployment,0,,,"Since TDD requires defining specific tests upfront, it can restrict the freedom needed during early, unstructured exploratory work. This makes 'exploratory' the correct answer."
+85,17,multiple_choice,exercise,82,What kind of work suits TDD best?,Known logic|Rough sketch|Guesswork,0,,,TDD is most effective when you have known logic because it requires a clear expected outcome to write the initial failing test. It struggles with guesswork or vague sketches since the tests need precise requirements.
+86,18,true_false,preview,87,A real database test catches issues a fake misses.,,true,cards/card_86.png,,"Mocks only verify that your code *attempts* to interact with a database; a real test confirms that the data actually behaves correctly, catching issues like transaction failures or unique constraints."
 87,18,multiple_choice,main,,What does a real database catch?,Query bugs|Test names|File size,0,,,"That comes at a cost: real-database tests run slower than an in-memory fake, which would miss real query bugs."
-88,18,true_false,exercise,87,Real database tests usually run slower.,,true,,,
-89,18,select_blank,exercise,87,A ___ database catches real query bugs.,real|fake|missing,0,,,
-90,18,multiple_choice,exercise,87,What is the tradeoff of using a real database?,Slower tests|Less accurate|More flaky,0,,,
-91,19,true_false,preview,92,An API test can run without a browser.,,true,cards/card_91.png,,
+88,18,true_false,exercise,87,Real database tests usually run slower.,,true,,,"Interacting with a live database involves I/O overhead and setup time, which inherently makes these tests much slower than running pure unit tests against in-memory mocks."
+89,18,select_blank,exercise,87,A ___ database catches real query bugs.,real|fake|missing,0,,,Only a real database accurately simulates the complex interactions and bugs found in your live environment; fake databases are designed to mimic data structure but cannot catch those specific query errors.
+90,18,multiple_choice,exercise,87,What is the tradeoff of using a real database?,Slower tests|Less accurate|More flaky,0,,,"Because real database interactions require actual disk reads and writes, these tests inherently take longer to run compared to running against simple in-memory fakes."
+91,19,true_false,preview,92,An API test can run without a browser.,,true,cards/card_91.png,,"API tests interact directly with backend endpoints using HTTP calls, bypassing the need to load and render a full user interface within a web browser."
 92,19,multiple_choice,main,,What does an API test check?,Status/body|Only colors|Only fonts,0,,,"It sends a real HTTP request and checks the response, all without needing a browser at all."
-93,19,true_false,exercise,92,API tests can run without a browser.,,true,,,
-94,19,select_blank,exercise,92,API tests send a real ___ request.,HTTP|email|text,0,,,
-95,19,multiple_choice,exercise,92,What does a status code confirm?,Request outcome|Font size|Page color,0,,,
-96,20,true_false,preview,97,A contract test can catch a breaking change.,,true,cards/card_96.png,,
+93,19,true_false,exercise,92,API tests can run without a browser.,,true,,,"API tests interact directly with endpoints and data layers, meaning they don't need a visual interface like a browser to function. They only require network access to send requests and receive structured data."
+94,19,select_blank,exercise,92,API tests send a real ___ request.,HTTP|email|text,0,,,"Since APIs communicate over the web, they must use the standard Hypertext Transfer Protocol (HTTP) to structure their requests. Email or plain text protocols aren't designed for this kind of structured web data exchange."
+95,19,multiple_choice,exercise,92,What does a status code confirm?,Request outcome|Font size|Page color,0,,,"The status code is purely a confirmation that tells you if the request was successful, failed, or requires further action from the client. It relates to the transaction outcome, not visual elements like colors or fonts."
+96,20,true_false,preview,97,A contract test can catch a breaking change.,,true,cards/card_96.png,,"Yes, catching breaking changes is exactly what a contract test is designed to do; it ensures services don't break each other unexpectedly."
 97,20,multiple_choice,main,,What does a contract test catch?,Breaking changes|Typos only|Slow builds,0,,,That means checking that the API still matches what its consumers expect — catching a breaking change before it ever reaches production.
-98,20,true_false,exercise,97,A contract test checks what consumers expect.,,true,,,
-99,20,select_blank,exercise,97,Contract tests catch changes before ___.,production|the meeting|lunch,0,,,
-100,20,multiple_choice,exercise,97,Who cares about a service's contract?,Consumers|Only CI|No one,0,,,
-101,21,multiple_choice,preview,102,What does Playwright drive?,A browser|A database|A compiler,0,cards/card_101.png,,
+98,20,true_false,exercise,97,A contract test checks what consumers expect.,,true,,,"That’s right. A contract test validates that the service provider is meeting the specific expectations of the consuming services, which is its core purpose."
+99,20,select_blank,exercise,97,Contract tests catch changes before ___.,production|the meeting|lunch,0,,,"The goal is to catch these issues in a testing environment, preventing them from ever reaching actual production and causing downtime."
+100,20,multiple_choice,exercise,97,Who cares about a service's contract?,Consumers|Only CI|No one,0,,,Consumers are the most concerned because their own functionality depends entirely on the service provider keeping its contract stable. The CI system just runs the tests; the consumers feel the impact of failure.
+101,21,multiple_choice,preview,102,What does Playwright drive?,A browser|A database|A compiler,0,cards/card_101.png,,Playwright is a powerful end-to-end testing framework built specifically to automate interactions within modern web browsers like Chrome and Firefox.
 102,21,multiple_choice,main,,What does a browser-driven test control?,Real browser|Only server|A database,0,,,"Tools like Playwright or Cypress click buttons and fill forms exactly like a real user would, catching real UI bugs that other tests would miss."
-103,21,true_false,exercise,102,Browser-driven tests can catch real UI bugs.,,true,,,
-104,21,select_blank,exercise,102,Browser-driven tests click buttons like a real ___.,user|server|database,0,,,
-105,21,multiple_choice,exercise,102,Name a browser-driven testing tool.,Playwright|Postman|Docker,0,,,
-106,22,true_false,preview,107,A flaky test gives inconsistent results.,,true,cards/card_106.png,,
+103,21,true_false,exercise,102,Browser-driven tests can catch real UI bugs.,,true,,,"Yes, because they simulate actual user interactions in a live environment, these tests are excellent at catching real-world UI bugs or layout issues that unit tests would miss."
+104,21,select_blank,exercise,102,Browser-driven tests click buttons like a real ___.,user|server|database,0,,,"They simulate how an actual end-user interacts with the application, making them ideal for testing front-end workflows and usability from a human perspective."
+105,21,multiple_choice,exercise,102,Name a browser-driven testing tool.,Playwright|Postman|Docker,0,,,"Playwright is specifically designed for end-to-end testing by automating interactions with web browsers. Postman focuses on API requests, and Docker manages containerization."
+106,22,true_false,preview,107,A flaky test gives inconsistent results.,,true,cards/card_106.png,,"A flaky test is characterized by its unpredictability; it passes sometimes and fails other times without any actual code change, making debugging very challenging."
 107,22,multiple_choice,main,,What makes a test flaky?,Inconsistent results|Slow runtime|Long names,0,,,"Common causes include timing issues, shared state, or a real race condition. A stable test, by contrast, gives the same result every single time."
-108,22,true_false,exercise,107,Shared state can cause a flaky test.,,true,,,
-109,22,select_blank,exercise,107,A ___ condition can cause flakiness.,race|stable|clean,0,,,
-110,22,multiple_choice,exercise,107,What does a flaky test do without code changes?,Inconsistent results|Always passes|Always fails,0,,,
-111,23,true_false,preview,112,A load test simulates many users at once.,,true,cards/card_111.png,,
+108,22,true_false,exercise,107,Shared state can cause a flaky test.,,true,,,"If tests modify or rely on the same piece of data (shared state) without proper isolation, one test's side effects can cause subsequent tests to fail unexpectedly."
+109,22,select_blank,exercise,107,A ___ condition can cause flakiness.,race|stable|clean,0,,,A race condition occurs when the outcome of an operation depends on the unpredictable timing or sequence of multiple processes. This non-deterministic behavior is what causes tests to fail randomly.
+110,22,multiple_choice,exercise,107,What does a flaky test do without code changes?,Inconsistent results|Always passes|Always fails,0,,,"The defining characteristic of a flaky test is that its results are inconsistent; it passes sometimes and fails other times, even when the underlying code hasn't changed."
+111,23,true_false,preview,112,A load test simulates many users at once.,,true,cards/card_111.png,,Correct. Load testing simulates high traffic volumes to determine how well your system maintains performance and stability under significant stress.
 112,23,multiple_choice,main,,What does a load test simulate?,Many users|One user|No users,0,,,That's to see how the system holds up and find its breaking point — before real traffic finds it for you.
-113,23,true_false,exercise,112,A load test finds a system's breaking point.,,true,,,
-114,23,select_blank,exercise,112,A load test checks how the system ___.,holds up|looks|smells,0,,,
-115,23,multiple_choice,exercise,112,Why run a load test before launch?,Find limits|Save disk|Skip QA,0,,,
-116,24,multiple_choice,preview,117,Which is a common security issue?,SQL injection|Slow query|Long name,0,cards/card_116.png,,
+113,23,true_false,exercise,112,A load test finds a system's breaking point.,,true,,,That's correct; a load test intentionally pushes the system beyond normal use until it reaches its breaking point or maximum capacity.
+114,23,select_blank,exercise,112,A load test checks how the system ___.,holds up|looks|smells,0,,,"Load tests are designed to measure stability under stress, so we check how the system holds up when many users hit it simultaneously."
+115,23,multiple_choice,exercise,112,Why run a load test before launch?,Find limits|Save disk|Skip QA,0,,,"The primary goal is to find performance bottlenecks and determine the system's maximum capacity, ensuring it won't crash under real-world traffic volumes."
+116,24,multiple_choice,preview,117,Which is a common security issue?,SQL injection|Slow query|Long name,0,cards/card_116.png,,"SQL injection is a critical vulnerability where an attacker manipulates database queries to steal or modify data. Slow query and long names are performance concerns, not inherent security flaws like injection attacks."
 117,24,multiple_choice,main,,Give an example security issue to test for.,SQL injection|Slow queries|Long names,0,,,Other common issues include an unauthenticated endpoint — anything that lets an attacker in before you find it yourself.
-118,24,true_false,exercise,117,An unauthenticated endpoint is a security risk.,,true,,,
-119,24,select_blank,exercise,117,Security testing looks for issues before an ___.,attacker|update|outage,0,,,
-120,24,multiple_choice,exercise,117,Why test security basics early?,Find risks|Slow build|Add bugs,0,,,
-121,25,true_false,preview,122,Accessibility testing checks screen reader support.,,true,cards/card_121.png,,
+118,24,true_false,exercise,117,An unauthenticated endpoint is a security risk.,,true,,,"Yes, if an endpoint doesn't require any authentication (login/credentials), anyone can access it, which is a major risk if that data is sensitive or private."
+119,24,select_blank,exercise,117,Security testing looks for issues before an ___.,attacker|update|outage,0,,,Security testing aims to proactively find vulnerabilities before an attacker can exploit them. This allows the development team time to patch flaws safely.
+120,24,multiple_choice,exercise,117,Why test security basics early?,Find risks|Slow build|Add bugs,0,,,Finding risks early in the cycle is crucial because fixing a vulnerability during design or initial coding is vastly cheaper and easier than doing it after deployment.
+121,25,true_false,preview,122,Accessibility testing checks screen reader support.,,true,cards/card_121.png,,"Screen readers are vital tools for visually impaired users, so checking their support ensures that all content and interactive elements can be properly interpreted by assistive technology."
 122,25,multiple_choice,main,,What can accessibility testing check?,Screen reader|Only speed|Only colors,0,,,It also checks that color contrast is readable — both matter so more people can actually use your app.
-123,25,true_false,exercise,122,Color contrast matters for accessibility.,,true,,,
-124,25,select_blank,exercise,122,Accessibility testing helps more people ___ your app.,use|ignore|delete,0,,,
-125,25,multiple_choice,exercise,122,Who benefits from accessible design?,More people|Only admins|No one,0,,,
-126,26,true_false,preview,127,A regression test re-runs old tests after a change.,,true,cards/card_126.png,,
+123,25,true_false,exercise,122,Color contrast matters for accessibility.,,true,,,"Color contrast is crucial because poor contrast makes text difficult or impossible to read for people with low vision or color blindness, severely limiting usability."
+124,25,select_blank,exercise,122,Accessibility testing helps more people ___ your app.,use|ignore|delete,0,,,"By ensuring the app works for diverse abilities, accessibility testing increases its overall usability and reach so that more people can actually use it."
+125,25,multiple_choice,exercise,122,Who benefits from accessible design?,More people|Only admins|No one,0,,,Accessible design benefits everyone—not just those with disabilities—including anyone using the app in difficult lighting or while multitasking.
+126,26,true_false,preview,127,A regression test re-runs old tests after a change.,,true,cards/card_126.png,,"That's right; the whole point of a regression test is to make sure that new code hasn't accidentally broken existing, previously working functionality."
 127,26,multiple_choice,main,,What does regression testing catch?,Re-broken features|New features|Typos only,0,,,"It works by re-running your old tests after every change, to catch something that used to work quietly breaking again."
-128,26,true_false,exercise,127,"Regression tests re-run old, existing tests.",,true,,,
-129,26,select_blank,exercise,127,Regression tests catch things that ___ working.,stopped|started|kept,0,,,
-130,26,multiple_choice,exercise,127,When do you typically run regression tests?,After change|Before coding|Never,0,,,
-131,27,true_false,preview,132,A CI pipeline runs tests on every push.,,true,cards/card_131.png,,
+128,26,true_false,exercise,127,"Regression tests re-run old, existing tests.",,true,,,Exactly. We run these established tests specifically to confirm that recent changes haven't introduced bugs into parts of the system that were already working fine.
+129,26,select_blank,exercise,127,Regression tests catch things that ___ working.,stopped|started|kept,0,,,"They are designed to find bugs or failures in features that were previously stable and working correctly, meaning they catch things that have stopped working."
+130,26,multiple_choice,exercise,127,When do you typically run regression tests?,After change|Before coding|Never,0,,,You run regression tests after a change to confirm that your new code hasn't broken any existing features. Running them before coding or never defeats the entire purpose of testing.
+131,27,true_false,preview,132,A CI pipeline runs tests on every push.,,true,cards/card_131.png,,"That is the fundamental principle of Continuous Integration: automatically running tests on every push ensures that integration problems are found immediately, keeping the codebase stable."
 132,27,multiple_choice,main,,When does a CI pipeline run tests?,Every push|Once yearly|Never,0,,,"If anything fails, CI blocks the merge automatically — no one has to remember to run the tests themselves."
 133,27,true_false,exercise,132,CI can block a merge if tests fail.,,true,,,
-134,27,select_blank,exercise,132,CI removes the need to ___ to test.,remember|forget|panic,0,,,
-135,27,multiple_choice,exercise,132,What triggers a CI test run?,A push|Coffee break|A meeting,0,,,
-136,28,true_false,preview,137,Each test should clean up after itself.,,true,cards/card_136.png,,
+134,27,select_blank,exercise,132,CI removes the need to ___ to test.,remember|forget|panic,0,,,"Since CI automates the testing process upon every commit, you no longer have to manually remember to run the full test suite yourself."
+135,27,multiple_choice,exercise,132,What triggers a CI test run?,A push|Coffee break|A meeting,0,,,CI testing is triggered automatically whenever a developer pushes code changes to the repository. Coffee breaks or meetings have no effect on your Git workflow.
+136,28,true_false,preview,137,Each test should clean up after itself.,,true,cards/card_136.png,,This is crucial for reliable testing; each test case must run independently without leaving behind state or data that could affect subsequent tests.
 137,28,multiple_choice,main,,What should each test manage itself?,Its data|Whole suite|Other tests,0,,,"That means setting up its own data and cleaning up afterward, so no test depends on run order or leftover state from another test."
 138,28,true_false,exercise,137,Tests should depend on run order to pass.,,false,,,A well-written test should pass regardless of what ran before it.
-139,28,select_blank,exercise,137,A test should ___ up after itself.,clean|mess|slow,0,,,
-140,28,multiple_choice,exercise,137,What causes order-dependent test failures?,Leftover state|Fast runtime|Clear naming,0,,,
-141,29,true_false,preview,142,A bug-fix test should fail on the old code.,,true,,,
+139,28,select_blank,exercise,137,A test should ___ up after itself.,clean|mess|slow,0,,,"Tests must 'clean' up any resources or data they create so that the next test starts from a known, pristine state. This prevents unpredictable failures."
+140,28,multiple_choice,exercise,137,What causes order-dependent test failures?,Leftover state|Fast runtime|Clear naming,0,,,Order-dependent failures happen when one test leaves behind state or data that affects a subsequent test. This means your tests aren't truly isolated from each other.
+141,29,true_false,preview,142,A bug-fix test should fail on the old code.,,true,,,"A bug-fix test must fail when run against the old code because its entire purpose is to prove that specific failure used to exist. If it passes, you haven't caught the bug yet."
 142,29,multiple_choice,main,,What should a bug-fix test do on old code?,Fail|Pass|Skip,0,,,"That way, if the bug ever creeps back in, this exact test fails again immediately — it can never silently return unnoticed."
-143,29,true_false,exercise,142,A regression test can stop a bug from silently returning.,,true,,,
-144,29,select_blank,exercise,142,A bug-fix test should pass on the ___.,fix|old bug|nothing,0,,,
+143,29,true_false,exercise,142,A regression test can stop a bug from silently returning.,,true,,,"Yes, that's exactly what regression tests do; they ensure that new changes haven't broken existing functionality and prevent bugs from silently creeping back in."
+144,29,select_blank,exercise,142,A bug-fix test should pass on the ___.,fix|old bug|nothing,0,,,"It must pass when running against the fixed version of the code, which confirms that the original issue has been successfully resolved by the patch."
 145,29,multiple_choice,exercise,142,Why write a bug-fix test at fix time?,Prevents return|Slows fix|Adds risk,0,,,
-146,30,true_false,preview,147,A property-based test generates many random inputs.,,true,cards/card_146.png,,
-147,30,multiple_choice,main,,What does property-based testing generate?,Random inputs|One example|A screenshot,0,,,
-148,30,true_false,exercise,147,A property-based test checks a general rule.,,true,,,
-149,30,select_blank,exercise,147,Property tests check a rule for many ___ inputs.,random|fixed|zero,0,,,
+146,30,true_false,preview,147,A property-based test generates many random inputs.,,true,cards/card_146.png,,"That's right. Instead of relying on specific examples, property-based tests generate numerous random datasets to test the boundaries and edge cases of your code."
+147,30,multiple_choice,main,,What does property-based testing generate?,Random inputs|One example|A screenshot,0,,,"Property-based testing generates a wide variety of randomly generated inputs to test edge cases, unlike traditional tests that only use specific examples."
+148,30,true_false,exercise,147,A property-based test checks a general rule.,,true,,,"That's right; instead of verifying behavior for specific inputs, it validates that a defined property or invariant holds true across all valid data."
+149,30,select_blank,exercise,147,Property tests check a rule for many ___ inputs.,random|fixed|zero,0,,,"They are designed to stress-test code by feeding it a large number of randomly generated inputs, making them much more robust than testing with fixed values."
 150,30,multiple_choice,exercise,147,How does property-based testing differ from one example?,Wider coverage|Narrower coverage|No coverage,0,,,
-151,31,true_false,preview,152,Mutation testing intentionally breaks small pieces of code.,,true,cards/card_151.png,,
+151,31,true_false,preview,152,Mutation testing intentionally breaks small pieces of code.,,true,cards/card_151.png,,"The goal isn't to break the code, but rather to see if your existing tests are robust enough to detect when small changes *do* break it."
 152,31,multiple_choice,main,,What does mutation testing intentionally do?,Break code|Fix bugs|Delete tests,0,,,Each broken copy — a mutant — checks whether your suite notices. A mutant that survives reveals a test that passes but doesn't actually check anything.
-153,31,true_false,exercise,152,Mutation testing can reveal a weak test.,,true,,,
-154,31,select_blank,exercise,152,Mutation testing checks whether your suite ___ a break.,notices|ignores|causes,0,,,
-155,31,multiple_choice,exercise,152,What does a surviving mutant reveal?,Weak test|Fast test|Slow build,0,,,
-156,32,true_false,preview,157,A trivial getter rarely needs a dedicated test.,,true,cards/card_156.png,,
+153,31,true_false,exercise,152,Mutation testing can reveal a weak test.,,true,,,"If a mutant survives (meaning the test suite doesn't fail), it strongly suggests that there is a gap in coverage or logic that needs addressing."
+154,31,select_blank,exercise,152,Mutation testing checks whether your suite ___ a break.,notices|ignores|causes,0,,,"The whole point of mutation testing is to see if your current tests are sensitive enough to detect when small changes break functionality, otherwise they just ignore the issue."
+155,31,multiple_choice,exercise,152,What does a surviving mutant reveal?,Weak test|Fast test|Slow build,0,,,"A surviving mutant means that a specific change in the code didn't cause any test to fail, indicating that your test suite is missing adequate coverage for that piece of logic."
+156,32,true_false,preview,157,A trivial getter rarely needs a dedicated test.,,true,cards/card_156.png,,"Getters typically just retrieve stored values, which is a very simple operation that standard unit tests or integration checks usually cover without needing their own dedicated test file."
 157,32,multiple_choice,main,,Give an example that rarely needs a test.,Throwaway script|Business logic|Payment flow,0,,,So does a trivial getter — the cost of writing and maintaining a test for either one usually outweighs the benefit.
 158,32,true_false,exercise,157,Every single line of code needs its own test.,,false,,,Trivial or throwaway code often is not worth the maintenance cost of a test.
-159,32,select_blank,exercise,157,Skip a test when the cost outweighs the ___.,benefit|code|team,0,,,
-160,32,multiple_choice,exercise,157,What kind of code often skips a test?,Trivial getter|Payment logic|Auth logic,0,,,
+159,32,select_blank,exercise,157,Skip a test when the cost outweighs the ___.,benefit|code|team,0,,,"Testing takes time and effort, so you should only write it if the value or risk reduction (the benefit) outweighs the cost of writing and maintaining the test itself."
+160,32,multiple_choice,exercise,157,What kind of code often skips a test?,Trivial getter|Payment logic|Auth logic,0,,,"Simple getters are often considered trivial because they just read data; therefore, the effort to test them doesn't provide enough value compared to testing complex logic like payments or authentication."
 161,1,multi_select,exercise,2,Which are true about tests?,Catch mistakes|Give confidence|Ensure perfection|Replace reviews,0|1,,,
-162,1,multiple_choice,exercise,2,What do tests give you to change code?,Confidence|Fear|Delay,0,,,
-163,2,multi_select,exercise,7,Which are true about skipping tests?,Feels faster|Costs more|Builds trust|Saves money,0|1,cards/card_163.png,,
-164,2,match_pairs,exercise,7,Match each timing to its cost.,Before shipping:cheapest|After shipping:most expensive,,cards/card_164.png,,
-165,3,multi_select,exercise,12,Which describe a unit test?,One function|Isolated|Whole app|Needs browser,0|1,,,
-166,3,multiple_choice,exercise,12,What environment does a unit test run in?,Isolation|Production|A browser,0,,,
-167,4,multi_select,exercise,17,Which describe an integration test?,Parts together|Real database|One function|Never combines,0|1,,,
-168,4,select_blank,exercise,17,An integration test checks multiple ___ together.,parts|users|servers,0,,,
-169,5,multi_select,exercise,22,Which are true of end-to-end tests?,Real user|Full flow|One function|Skips UI,0|1,,,
-170,5,order,exercise,22,Order test scope from narrowest to widest.,Unit test|Integration test|End-to-end test,,cards/card_170.png,,
+162,1,multiple_choice,exercise,2,What do tests give you to change code?,Confidence|Fear|Delay,0,,,"Tests provide a safety net, giving you the confidence to refactor or make changes without worrying about breaking existing functionality. Fear and delay are emotional reactions, not what testing actually provides."
+163,2,multi_select,exercise,7,Which are true about skipping tests?,Feels faster|Costs more|Builds trust|Saves money,0|1,cards/card_163.png,,"Skipping tests makes your local workflow feel fast because you skip the suite, but this inevitably costs you time and effort later when bugs surface in production. It certainly does not build trust or save money."
+164,2,match_pairs,exercise,7,Match each timing to its cost.,Before shipping:cheapest|After shipping:most expensive,,cards/card_164.png,,"The earlier you catch an issue in the development cycle, the less expensive it is to fix. Finding a bug before shipping saves significant time and money compared to finding it after."
+165,3,multi_select,exercise,12,Which describe a unit test?,One function|Isolated|Whole app|Needs browser,0|1,,,"Unit tests focus on the smallest piece of code, like a single function, and they must run in isolation so that failures can be pinpointed accurately."
+166,3,multiple_choice,exercise,12,What environment does a unit test run in?,Isolation|Production|A browser,0,,,"Unit tests are designed to be completely isolated from external dependencies or the full application environment, ensuring that only the specific unit being tested is responsible for any failure."
+167,4,multi_select,exercise,17,Which describe an integration test?,Parts together|Real database|One function|Never combines,0|1,,,"Integration tests verify that different modules work together, often requiring interaction with external components like a live database to simulate reality."
+168,4,select_blank,exercise,17,An integration test checks multiple ___ together.,parts|users|servers,0,,,"Integration tests specifically focus on how different components or modules interact, checking that the individual pieces fit together correctly."
+169,5,multi_select,exercise,22,Which are true of end-to-end tests?,Real user|Full flow|One function|Skips UI,0|1,,,"E2E tests are designed to mimic real users navigating through the full flow of the app, testing everything from the UI down to the backend logic. They validate the entire system interaction, unlike unit tests which focus on single functions."
+170,5,order,exercise,22,Order test scope from narrowest to widest.,Unit test|Integration test|End-to-end test,,cards/card_170.png,,"The scope increases because you start by checking tiny pieces of code (Unit), then verifying how groups of those pieces connect (Integration), and finally confirming that the whole application works together as a user would (End-to-end)."
 171,6,order,exercise,27,Order the pyramid from most to least.,Unit tests|Integration tests|End-to-end tests,,,,
 172,6,multi_select,exercise,27,Which are true of the pyramid?,Many units|Few e2e|Slow suite|Mostly integration,0|1|2,,,
-173,7,order,exercise,32,Order the AAA steps.,Arrange|Act|Assert,,cards/card_173.png,,
-174,7,match_pairs,exercise,32,Match each AAA step to its job.,Arrange:sets up data|Act:runs the code|Assert:checks the result,,,,
+173,7,order,exercise,32,Order the AAA steps.,Arrange|Act|Assert,,cards/card_173.png,,"The correct sequence is Arrange, then Act, and finally Assert; this follows a logical flow of setup, execution, and verification."
+174,7,match_pairs,exercise,32,Match each AAA step to its job.,Arrange:sets up data|Act:runs the code|Assert:checks the result,,,,"This pairing is accurate: Arrange prepares the environment, Act executes the function under test, and Assert verifies that the results were what you expected."
 175,8,multi_select,exercise,37,Which traits make a test good?,Fast|Reliable|One thing|Overly complex,0|1|2,,,
-176,8,select_blank,exercise,37,A good test should be fast and ___.,reliable|slow|verbose,0,,,
-177,9,multi_select,exercise,42,Which help a test name explain itself?,Describes behavior|Is specific|Is vague|Names author,0|1,cards/card_177.png,,
-178,9,select_blank,exercise,42,A clear test name describes the ___.,behavior|file size|author,0,,,
-179,10,multi_select,exercise,47,Which are true about assertions?,Specific helps|Vague confuses|Vague preferred|Equal speed,0|1,cards/card_179.png,,
-180,10,match_pairs,exercise,47,Match each assertion to its clarity.,Specific assertion:clear failure|Vague assertion:unclear failure,,,,
-181,11,match_pairs,exercise,52,Match each test double to its role.,Stub:canned answers|Mock:checks how called|Fake:simplified version|Spy:records real calls,,cards/card_181.png,,
+176,8,select_blank,exercise,37,A good test should be fast and ___.,reliable|slow|verbose,0,,,"Reliable means the test consistently passes or fails when it should, which is crucial for knowing if a change actually broke something. Choosing 'slow' would make the test suite impractical to run frequently."
+177,9,multi_select,exercise,42,Which help a test name explain itself?,Describes behavior|Is specific|Is vague|Names author,0|1,cards/card_177.png,,A test name should describe exactly what functionality is being tested and be highly specific so that anyone reading it knows what behavior was expected. Simply naming the author or using vague terms doesn't help diagnose failures.
+178,9,select_blank,exercise,42,A clear test name describes the ___.,behavior|file size|author,0,,,"A test name should always communicate the expected business logic or behavior of the system under test. It serves as documentation for what the code is supposed to accomplish, not who wrote it or how big the file is."
+179,10,multi_select,exercise,47,Which are true about assertions?,Specific helps|Vague confuses|Vague preferred|Equal speed,0|1,cards/card_179.png,,"Specific assertions are crucial because they tell you exactly what failed, while vague ones just confuse you about the root cause of the bug."
+180,10,match_pairs,exercise,47,Match each assertion to its clarity.,Specific assertion:clear failure|Vague assertion:unclear failure,,,,"A specific assertion points directly to the problem area, making debugging straightforward; conversely, a vague assertion leaves you guessing about what actually went wrong."
+181,11,match_pairs,exercise,52,Match each test double to its role.,Stub:canned answers|Mock:checks how called|Fake:simplified version|Spy:records real calls,,cards/card_181.png,,"Stubs provide canned answers, Fakes are simplified working versions, Mocks check how methods were called, and Spies record real calls while letting the original code run."
 182,11,multi_select,exercise,52,Which test doubles track how they were called?,Mock|Spy|Stub|Fake,0|1,,,Mocks check calls were correct; spies just record them.
-183,12,multi_select,exercise,57,Which are true about mocking and its risks?,Isolates dependency|Hides bugs|Always helps|Tests assumptions,0|1|3,cards/card_183.png,,
-184,12,select_blank,exercise,57,Mocking isolates a slow or ___ dependency.,flaky|fast|typed,0,,,
-185,13,multi_select,exercise,62,Which are true about coverage?,Measures lines|Guarantees quality|Unchecked line|Proves correctness,0|2,cards/card_185.png,,
-186,13,select_blank,exercise,62,Coverage shows which lines ___.,ran|crashed|compiled,0,,,
-187,14,multi_select,exercise,67,Which are classic boundary cases?,Empty list|Zero|Negative numbers|Happy path,0|1|2,cards/card_187.png,,
-188,14,multiple_choice,exercise,67,What is the edge of a range called?,Boundary|Midpoint|Average,0,,,
-189,15,multi_select,exercise,72,Which failure paths are worth testing?,Network timeout|Bad input|Failed call|Only success,0|1|2,cards/card_189.png,,
-190,15,select_blank,exercise,72,Test what happens when a call ___.,fails|loads|renders,0,,,
-191,16,order,exercise,77,Order the TDD loop.,Red|Green|Refactor,,cards/card_191.png,,
-192,16,match_pairs,exercise,77,Match each TDD step to its meaning.,Red:write a failing test|Green:make it pass|Refactor:clean up code,,,,
-193,17,multi_select,exercise,82,Which slow TDD down?,Unclear design|Rough prototype|Clear logic|Bug fixing,0|1,cards/card_193.png,,
-194,17,select_blank,exercise,82,"TDD suits clear, well-understood ___.",logic|UIs|teams,0,,,
-195,18,multi_select,exercise,87,Which are true of real database tests?,Catches bugs|Run slower|Fakes miss|Always instant,0|1|2,,,
-196,18,select_blank,exercise,87,Real database tests run ___ than fakes.,slower|faster|louder,0,,,
-197,19,multi_select,exercise,92,What does an API test check?,Status code|Response body|Font choices|Page colors,0|1,,,
-198,19,multiple_choice,exercise,92,What must an API test check besides status?,Response body|Server uptime|CPU usage,0,,,
-199,20,multi_select,exercise,97,Which are true about contract tests?,Checks consumers|Catches changes|Needs e2e|Only typos,0|1,cards/card_199.png,,
-200,20,select_blank,exercise,97,Contract tests catch a breaking ___.,change|comment|typo,0,,,
-201,21,multi_select,exercise,102,Which are true of browser-driven tests?,Drives browser|User-like clicks|Fill forms|Skips UI,0|1|2,cards/card_201.png,,
-202,21,multiple_choice,exercise,102,What do browser-driven testing tools drive?,A browser|A database|A compiler,0,,,
-203,22,multi_select,exercise,107,What can cause a flaky test?,Timing issues|Shared state|Race condition|Clear naming,0|1|2,,,
-204,22,match_pairs,exercise,107,Match each test to its behavior.,Flaky test:inconsistent result|Stable test:same result,,,,
-205,23,multi_select,exercise,112,Which are true of a load test?,Many users|Finds limits|Before traffic|One user,0|1|2,cards/card_205.png,,
-206,23,select_blank,exercise,112,A load test finds the system's ___ point.,breaking|starting|midpoint,0,,,
-207,24,multi_select,exercise,117,Which are security issues to test?,SQL injection|Unauthenticated endpoint|Slow query|Long names,0|1,cards/card_207.png,,
-208,24,multiple_choice,exercise,117,What kind of endpoint is a security risk?,Unauthenticated|Cached|Versioned,0,,,
-209,25,multi_select,exercise,122,What can accessibility testing check?,Screen reader|Color contrast|Page speed|Server logs,0|1,,,
-210,25,select_blank,exercise,122,Good color ___ helps accessibility.,contrast|theme|size,0,,,
-211,26,multi_select,exercise,127,Which are true of regression tests?,Reruns tests|Catches regressions|New features|Runs once,0|1,,,
-212,26,select_blank,exercise,127,Regression tests catch things that stopped ___.,working|compiling|logging,0,,,
-213,27,order,exercise,132,Order what happens in CI.,A push happens|Tests run|A bad merge is blocked,,,,
-214,27,multi_select,exercise,132,Which are true about CI pipelines?,Every push|Blocks merges|Manual runs|Run automatically,0|1|3,cards/card_214.png,,
-215,28,multi_select,exercise,137,Which should each test do?,Own setup|Cleans up|Order-dependent|Uses leftovers,0|1,,,
-216,28,select_blank,exercise,137,Each test should clean ___ after itself.,up|down|out,0,,,
-217,29,multi_select,exercise,142,Which are true of a bug-fix test?,Fails first|Passes after|Prevents return|Always optional,0|1|2,cards/card_217.png,,
-218,29,order,exercise,142,Order a bug-fix test's two states.,Fails on old code|Passes on fixed code,,cards/card_218.png,,
-219,30,multi_select,exercise,147,Which are true of property-based tests?,Random inputs|Checks rule|One example|Many cases,0|1|3,,,
-220,30,match_pairs,exercise,147,Match each style to its inputs.,Property-based test:many random inputs|Example-based test:one fixed example,,,,
-221,31,multi_select,exercise,152,Which are true of mutation testing?,Breaks code|Checks detection|Reveals weakness|Fixes bugs,0|1|2,cards/card_221.png,,
-222,31,select_blank,exercise,152,A surviving mutant reveals a ___ test.,weak|fast|new,0,,,
-223,32,multi_select,exercise,157,Which often skip a test?,Throwaway script|Trivial getter|Business logic|Payment logic,0|1,cards/card_223.png,,
+183,12,multi_select,exercise,57,Which are true about mocking and its risks?,Isolates dependency|Hides bugs|Always helps|Tests assumptions,0|1|3,cards/card_183.png,,"Mocking successfully isolates components and helps you test specific assumptions about their behavior. However, be careful because it can also hide integration bugs or make your code harder to maintain if overused."
+184,12,select_blank,exercise,57,Mocking isolates a slow or ___ dependency.,flaky|fast|typed,0,,,You typically mock dependencies that are slow or flaky; this ensures your unit tests run quickly and consistently without having to wait for unreliable external services.
+185,13,multi_select,exercise,62,Which are true about coverage?,Measures lines|Guarantees quality|Unchecked line|Proves correctness,0|2,cards/card_185.png,,"Coverage is limited to measuring execution paths and reporting which lines were missed, but it can never guarantee quality or prove that the code is fully correct."
+186,13,select_blank,exercise,62,Coverage shows which lines ___.,ran|crashed|compiled,0,,,"Code coverage tools are designed simply to track whether a specific line of code was executed during the test run, meaning it 'ran'."
+187,14,multi_select,exercise,67,Which are classic boundary cases?,Empty list|Zero|Negative numbers|Happy path,0|1|2,cards/card_187.png,,"Boundary testing focuses on the extreme limits of input ranges—like empty lists, zero, and negative numbers—rather than just typical successful inputs. The happy path is a scenario, not a type of boundary."
+188,14,multiple_choice,exercise,67,What is the edge of a range called?,Boundary|Midpoint|Average,0,,,The term 'boundary' specifically refers to the defined limits or extreme points that mark the start and end of any given range of values.
+189,15,multi_select,exercise,72,Which failure paths are worth testing?,Network timeout|Bad input|Failed call|Only success,0|1|2,cards/card_189.png,,"You must test failure paths like network timeouts, bad inputs, and failed calls because these are the most likely ways the system will encounter real-world errors."
+190,15,select_blank,exercise,72,Test what happens when a call ___.,fails|loads|renders,0,,,You should test what happens when a call fails because that’s how you ensure your error handling logic actually works when things go wrong.
+191,16,order,exercise,77,Order the TDD loop.,Red|Green|Refactor,,cards/card_191.png,,"The proper cycle is Red, Green, then Refactor. You must first write a failing test (Red), then add the minimum code to make it pass (Green), and finally clean up the resulting structure (Refactor)."
+192,16,match_pairs,exercise,77,Match each TDD step to its meaning.,Red:write a failing test|Green:make it pass|Refactor:clean up code,,,,"Red means writing a test that fails, Green is making sure the test passes with minimal code, and Refactoring is cleaning up the underlying code structure afterward."
+193,17,multi_select,exercise,82,Which slow TDD down?,Unclear design|Rough prototype|Clear logic|Bug fixing,0|1,cards/card_193.png,,"TDD relies on having defined boundaries; if your design is unclear or you are working from a rough prototype, you lack the stable requirements needed to write effective tests. Clear logic is exactly what TDD is designed to validate."
+194,17,select_blank,exercise,82,"TDD suits clear, well-understood ___.",logic|UIs|teams,0,,,"Since TDD focuses on verifying internal business rules and functionality, it works best when the underlying code logic is well-understood. Testing UIs or teams requires different testing strategies."
+195,18,multi_select,exercise,87,Which are true of real database tests?,Catches bugs|Run slower|Fakes miss|Always instant,0|1|2,,,Real database tests are valuable because they catch production bugs and naturally run slower than mocks; the key takeaway is that no fake system can perfectly replicate every possible bug your live environment might encounter.
+196,18,select_blank,exercise,87,Real database tests run ___ than fakes.,slower|faster|louder,0,,,"Interacting with a real database involves actual disk operations and network latency, which is significantly more time-consuming than running tests against an in-memory fake."
+197,19,multi_select,exercise,92,What does an API test check?,Status code|Response body|Font choices|Page colors,0|1,,,"You must always verify the status code for success confirmation and then check the response body to ensure the returned data is accurate. Visual aspects like font choices are handled by UI tests, not API tests."
+198,19,multiple_choice,exercise,92,What must an API test check besides status?,Response body|Server uptime|CPU usage,0,,,"A successful status code only confirms that the request was received; you must examine the response body to ensure the actual data payload is accurate and complete. Server uptime or CPU usage are operational metrics, not part of the API test result."
+199,20,multi_select,exercise,97,Which are true about contract tests?,Checks consumers|Catches changes|Needs e2e|Only typos,0|1,cards/card_199.png,,"Contract tests verify that services meet the expectations of their consumers and help catch breaking API changes before they hit production. They validate the contract itself, which is much faster than needing a full end-to-end setup."
+200,20,select_blank,exercise,97,Contract tests catch a breaking ___.,change|comment|typo,0,,,"They are designed to validate the agreed-upon structure of data between services, meaning they catch any breaking changes in an API's interface or contract."
+201,21,multi_select,exercise,102,Which are true of browser-driven tests?,Drives browser|User-like clicks|Fill forms|Skips UI,0|1|2,cards/card_201.png,,"Browser-driven tests simulate real user behavior, meaning they can interact with the UI by clicking elements or filling forms within a browser instance. They are designed to test the UI layer itself."
+202,21,multiple_choice,exercise,102,What do browser-driven testing tools drive?,A browser|A database|A compiler,0,,,"These tools are built to control and automate interactions with an actual web browser, allowing them to simulate user behavior on a webpage. Their focus is the client-side presentation layer."
+203,22,multi_select,exercise,107,What can cause a flaky test?,Timing issues|Shared state|Race condition|Clear naming,0|1|2,,,"Flakiness usually stems from non-deterministic factors like timing issues or shared resources (shared state), which can lead to race conditions if synchronization isn't handled correctly."
+204,22,match_pairs,exercise,107,Match each test to its behavior.,Flaky test:inconsistent result|Stable test:same result,,,,"A stable test is reliable and always yields the same result, whereas a flaky test is unpredictable because its outcome varies inconsistently upon repeated execution."
+205,23,multi_select,exercise,112,Which are true of a load test?,Many users|Finds limits|Before traffic|One user,0|1|2,cards/card_205.png,,Load tests simulate many concurrent users and must be run before launch to identify critical performance limits.
+206,23,select_blank,exercise,112,A load test finds the system's ___ point.,breaking|starting|midpoint,0,,,"It determines the critical threshold, or breaking point, where the system's resources are exhausted and its performance degrades or fails completely under heavy traffic."
+207,24,multi_select,exercise,117,Which are security issues to test?,SQL injection|Unauthenticated endpoint|Slow query|Long names,0|1,cards/card_207.png,,"You must test for direct vulnerabilities like SQL injection and unauthenticated endpoints, as these allow unauthorized access. Slow queries are usually performance issues, not primary security flaws."
+208,24,multiple_choice,exercise,117,What kind of endpoint is a security risk?,Unauthenticated|Cached|Versioned,0,,,"An unauthenticated endpoint is a major risk because anyone can access it without needing credentials, making it easy for attackers to exploit or steal data."
+209,25,multi_select,exercise,122,What can accessibility testing check?,Screen reader|Color contrast|Page speed|Server logs,0|1,,,"Accessibility testing focuses on user experience for people with disabilities, so it checks things like how a screen reader interprets content and if there is enough color contrast. Page speed or server logs are performance issues, not accessibility concerns."
+210,25,select_blank,exercise,122,Good color ___ helps accessibility.,contrast|theme|size,0,,,"High color contrast ensures that text has sufficient separation from its background, which is critical for users with low vision or color blindness to read properly."
+211,26,multi_select,exercise,127,Which are true of regression tests?,Reruns tests|Catches regressions|New features|Runs once,0|1,,,"Regression tests are designed specifically to rerun established test cases and catch unintended bugs introduced by recent changes. They validate stability, not new functionality."
+212,26,select_blank,exercise,127,Regression tests catch things that stopped ___.,working|compiling|logging,0,,,"These tests confirm that the system still functions as expected after a change, meaning they catch things that stopped working. Compiling or logging issues are typically caught by different types of automated checks."
+213,27,order,exercise,132,Order what happens in CI.,A push happens|Tests run|A bad merge is blocked,,,,"The process starts when you push new code, which immediately triggers the tests to run. If those automated tests fail, the CI system will block a bad merge from happening."
+214,27,multi_select,exercise,132,Which are true about CI pipelines?,Every push|Blocks merges|Manual runs|Run automatically,0|1|3,cards/card_214.png,,"CI pipelines are designed to run automatically on every push and they enforce quality by blocking merges if the code fails testing. While manual runs are possible, their core function is continuous automation."
+215,28,multi_select,exercise,137,Which should each test do?,Own setup|Cleans up|Order-dependent|Uses leftovers,0|1,,,"Every good unit test must be self-contained, meaning it handles its own setup and cleanup. This guarantees the test results are reliable no matter what order they run in."
+216,28,select_blank,exercise,137,Each test should clean ___ after itself.,up|down|out,0,,,You should always clean up after yourself to ensure that any resources or changes made during the test do not interfere with other tests running later.
+217,29,multi_select,exercise,142,Which are true of a bug-fix test?,Fails first|Passes after|Prevents return|Always optional,0|1|2,cards/card_217.png,,"A bug-fix test should fail first (on the buggy code), then pass after the fix is applied, and serves as a crucial safety net to prevent future regressions."
+218,29,order,exercise,142,Order a bug-fix test's two states.,Fails on old code|Passes on fixed code,,cards/card_218.png,,"The correct order shows that it must initially fail when running against the old, broken code; only then can it pass once the fix has been successfully implemented."
+219,30,multi_select,exercise,147,Which are true of property-based tests?,Random inputs|Checks rule|One example|Many cases,0|1|3,,,"Property-based tests are defined by checking a general rule across many randomly generated inputs, which is their core strength."
+220,30,match_pairs,exercise,147,Match each style to its inputs.,Property-based test:many random inputs|Example-based test:one fixed example,,,,"Property tests generate many random inputs to check general rules, while traditional example tests rely on a small set of fixed, predefined examples."
+221,31,multi_select,exercise,152,Which are true of mutation testing?,Breaks code|Checks detection|Reveals weakness|Fixes bugs,0|1|2,cards/card_221.png,,"It intentionally breaks small pieces of code (mutants) and checks if your existing tests are capable of detecting those failures, thereby revealing weaknesses in the test suite."
+222,31,select_blank,exercise,152,A surviving mutant reveals a ___ test.,weak|fast|new,0,,,"The context implies that the test was insufficient or easily bypassed, which is why it's described as weak. While fast or new are possible descriptors, 'weak' speaks directly to its lack of effectiveness in testing mutant survival."
+223,32,multi_select,exercise,157,Which often skip a test?,Throwaway script|Trivial getter|Business logic|Payment logic,0|1,cards/card_223.png,,"Scripts that were temporary or never intended for production, along with simple getters, are often skipped because their value is minimal or they are too straightforward to require formal testing."
 224,32,select_blank,exercise,157,A trivial getter rarely needs its own ___.,test|comment|type,0,,,
-225,19,order,exercise,92,Order the steps of an API test.,Send request|Check status|Check body,,cards/card_225.png,,
-226,28,order,exercise,137,Order what a test does with its data.,Set up|Run test|Clean up,,cards/card_226.png,,
+225,19,order,exercise,92,Order the steps of an API test.,Send request|Check status|Check body,,cards/card_225.png,,"You must first send the request, then check if the server responded successfully by looking at the status code, and finally verify that the data returned in the body is correct."
+226,28,order,exercise,137,Order what a test does with its data.,Set up|Run test|Clean up,,cards/card_226.png,,"The standard lifecycle is set up, run, and then clean up. This sequence ensures that you establish a known state before testing and revert to it afterward."

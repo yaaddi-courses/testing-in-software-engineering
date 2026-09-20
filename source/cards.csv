@@ -32,7 +32,7 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 31,7,multiple_choice,preview,32,What does Arrange set up?,Test data|The code|The result,0,cards/card_31.png,,
 32,7,multiple_choice,main,,What does the Act step do?,Runs code|Setup data|Checks result,0,,,"Arrange sets up the test data, Act runs the code being tested, and Assert checks the result — always in that order."
 33,7,true_false,exercise,32,Assert checks whether the result is correct.,,true,,,"Yes, asserting is specifically the step where you check if the actual result matches what you expected; it’s how you confirm success or failure."
-34,7,select_blank,exercise,32,___ sets up the test data first.,Arrange|Act|Assert,0,,,Arrange is the setup phase where you prepare all necessary variables and mock data needed for the test to run.
+34,7,select_blank,exercise,32,___ sets up the test data.,Arrange|Act|Assert,0,,,Arrange is the setup phase where you prepare all necessary variables and test data needed for the test to run.
 35,7,multiple_choice,exercise,32,What order do the three steps go in?,Arrange first|Assert first|Random order,0,,,You must always start with Arrange because you have to set up your test environment and data before you can execute or check anything.
 36,8,true_false,preview,37,A good test checks one clear thing.,,true,,,
 37,8,multiple_choice,main,,What should a good test check?,One thing|Everything|Nothing,0,,,"A good test is also fast and reliable, not flaky — so when it fails, you immediately know what broke."

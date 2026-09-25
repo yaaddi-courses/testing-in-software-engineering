@@ -31,3 +31,4 @@ id,title,description,min_level,section,image,section_image
 30,Property-Based Testing,"Testing a rule that should always hold, across hundreds of random inputs, instead of one example at a time.",1,Leveling Up,unit30.png,
 31,Mutation Testing,Deliberately breaking your code to check whether your tests actually notice.,1,Leveling Up,unit31.png,
 32,When Not to Write a Test,Recognizing the rare cases where a test isn't worth the cost of maintaining it.,1,Leveling Up,unit32.png,
+33,Recap: Key Terms,Quick matching practice that revisits the key terms from earlier decks.,1,Review,unit33.png,

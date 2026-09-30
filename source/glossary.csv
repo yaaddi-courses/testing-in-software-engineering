@@ -39,3 +39,17 @@ E2E,End-to-end: a test that drives the whole system the way a real user would.,h
 HTTP,HyperText Transfer Protocol: the protocol web browsers and servers use to exchange pages and data.,https://en.wikipedia.org/wiki/HTTP,
 SQL,Structured Query Language: the standard language for querying relational databases.,https://en.wikipedia.org/wiki/SQL,
 CPU,Central processing unit: the processor that executes a program's instructions.,https://en.wikipedia.org/wiki/Central_processing_unit,
+QA,Quality assurance: the practice of checking that software meets its requirements before release.,https://en.wikipedia.org/wiki/Quality_assurance,115
+unit tests,Small automated tests that check one function or component in isolation.,https://en.wikipedia.org/wiki/Unit_testing,11
+integration tests,Automated tests that check that several components work correctly together.,https://en.wikipedia.org/wiki/Integration_testing,16
+end-to-end tests,Automated tests that exercise a whole application from the user's point of view.,https://en.wikipedia.org/wiki/System_testing,21
+stubs,Simple stand-ins for a dependency that return fixed answers during a test.,https://en.wikipedia.org/wiki/Test_double,51
+mocks,Test stand-ins that also record how they were called so a test can check the interaction.,https://en.wikipedia.org/wiki/Mock_object,52
+fakes,"Working but simplified versions of a dependency, such as an in-memory database, used in tests.",https://en.wikipedia.org/wiki/Test_double,52
+test doubles,"Objects that stand in for a real dependency during a test, such as stubs, mocks and fakes.",https://en.wikipedia.org/wiki/Test_double,228
+boundary cases,"Test inputs at the edges of what is allowed, such as zero, empty or the maximum value.",https://en.wikipedia.org/wiki/Boundary-value_analysis,66
+contract tests,Tests that check two services still agree on the requests and responses they exchange.,https://martinfowler.com/bliki/ContractTest.html,96
+browser-driven tests,Automated tests that control a real browser to click and type like a user.,https://en.wikipedia.org/wiki/Selenium_(software),102
+regression tests,Tests re-run after a change to make sure old behaviour still works.,https://en.wikipedia.org/wiki/Regression_testing,126
+CI pipelines,Automated workflows that build and test code every time someone pushes a change.,https://en.wikipedia.org/wiki/Continuous_integration,131
+mutants,Small deliberate bugs inserted into code in mutation testing to see whether the tests notice.,https://en.wikipedia.org/wiki/Mutation_testing,152

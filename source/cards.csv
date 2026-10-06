@@ -237,3 +237,43 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 236,33,match_pairs,exercise,232,Match the terms and meanings.,SQL injection↔Malicious input attack|security testing↔Finds vulnerabilities|accessibility testing↔Usable by everyone|CI pipeline↔Runs tests automatically,,,,Each term is paired with its plain-language meaning.
 237,33,match_pairs,exercise,232,Link every term to its idea.,property-based testing↔Generated random inputs|mutation testing↔Breaks code deliberately|mutant↔Deliberately broken copy|test double↔Stand-in dependency,,,,Each term is paired with its plain-language meaning.
 238,33,true_false,exercise,232,end-to-end test means many unit tests.,,false,,,No: end-to-end test means acts like user.
+239,1,multiple_choice,exam,,Automated tests find bugs:,Immediately|After release|Never,0,,,A user then never finds the bug in production.
+240,2,multiple_choice,exam,,A bug is cheapest to fix:,During support|Before shipping|After shipping,1,,,A bug caught after shipping costs far more time.
+241,2,true_false,exam,,Skipping tests always saves total time.,,false,,,A late bug costs far more than catching it early.
+242,3,multiple_choice,exam,,A unit test checks one:,Small piece|Whole system|User journey,0,,,It runs in isolation from the database and network.
+243,4,multiple_choice,exam,,An integration test checks parts:,On paper|Together|In isolation,1,,,For example your code talking to a real database.
+244,5,multiple_choice,exam,,An end-to-end test acts like a:,Compiler tool|Code reviewer|Real user,2,,,It runs the full flow from start to finish.
+245,6,multiple_choice,exam,,The test pyramid favors many:,Unit tests|End-to-end tests|Manual tests,0,,,"Unit tests are fast, so you want lots of them."
+246,6,true_false,exam,,End-to-end tests are the fastest kind.,,false,,,"They are the slowest, so you want fewest of them."
+247,7,multiple_choice,exam,,The Act step:,Sets up data|Checks output|Runs code,2,,,Arrange sets up and Assert checks.
+248,7,multiple_choice,exam,,Which step sets up the test data?,Arrange|Act|Assert,0,,,It always comes first.
+249,8,multiple_choice,exam,,A good test checks one clear:,Release|Thing|Module,1,,,It is also fast and reliable.
+250,9,multiple_choice,exam,,A test name should describe the:,Author name|Commit date|Behavior,2,,,For example should_reject_empty_email.
+251,10,multiple_choice,exam,,A specific assertion gives clearer:,Failures|Colour schemes|Build servers,0,,,A vague truthy check hides what broke.
+252,11,multiple_choice,exam,,A stub returns:,Random numbers|Canned answers|Real database,1,,,A mock also checks how it was called.
+253,11,multiple_choice,exam,,A mock checks how it was:,Named|Built|Called,2,,,It verifies the interaction.
+254,11,true_false,exam,,"Spies, fakes and stubs are all test doubles.",,true,,,A test double stands in for a real dependency.
+255,12,multiple_choice,exam,,Mocking helps isolate a slow or flaky:,Requirement|Dependency|Developer,1,,,Over-mocking can hide real bugs.
+256,13,multiple_choice,exam,,Coverage shows which lines:,Passed review|Were written first|Ran,2,,,It does not prove the outcome was checked.
+257,13,true_false,exam,,100% coverage proves the code is correct.,,false,,,It only shows that lines ran.
+258,14,multiple_choice,exam,,Bugs love to hide at:,Import lines|Boundaries|Code comments,1,,,"Zero, empty lists and negative numbers are classic cases."
+259,15,multiple_choice,exam,,"Besides success, you should test:",Documentation|Colours|Failure paths,2,,,For example bad input or a network timeout.
+260,16,multiple_choice,exam,,Which TDD step comes first?,Red|Green|Refactor,0,,,You start with a failing test.
+261,16,multiple_choice,exam,,"In TDD, green means the test:",Is skipped|Passes|Fails,1,,,Refactoring comes after that.
+262,17,multiple_choice,exam,,TDD can slow you down when the design is:,Simple|Documented|Unclear,2,,,It shines when the logic is clear.
+263,18,multiple_choice,exam,,A real database test catches:,Query bugs|Typos only|Layout bugs,0,,,It runs slower than an in-memory fake.
+264,19,multiple_choice,exam,,An API test needs no:,Request|Browser|Server,1,,,It sends a real HTTP request and checks the response.
+265,20,multiple_choice,exam,,A contract test catches:,Slow pages|Spelling typos|Breaking changes,2,,,The API must still match what consumers expect.
+266,21,multiple_choice,exam,,Playwright drives a real:,Browser|Database|Compiler,0,,,It clicks and types like a user.
+267,22,multiple_choice,exam,,A flaky test gives:,Cleaner naming|Inconsistent results|Faster builds,1,,,Timing issues and shared state are common causes.
+268,23,multiple_choice,exam,,A load test simulates many:,Bugs|Tests|Users,2,,,It finds the system's breaking point.
+269,24,multiple_choice,exam,,SQL injection is a common:,Security issue|Style rule|Testing type,0,,,Security testing looks for it.
+270,25,multiple_choice,exam,,Accessibility testing can check screen reader:,Price|Support|Speed,1,,,It also checks that color contrast is readable.
+271,26,multiple_choice,exam,,Regression testing re-runs old tests after a:,Meeting|Release date|Change,2,,,It catches features that broke again.
+272,27,multiple_choice,exam,,CI runs tests on every:,Push|Holiday|Review comment,0,,,A failure blocks the merge automatically.
+273,28,multiple_choice,exam,,Each test should clean up its own:,Branch|Data|Reviewers,1,,,No test should depend on the run order.
+274,29,multiple_choice,exam,,A bug-fix test should on old code:,Pass|Skip|Fail,2,,,"If the bug returns, the test fails again."
+275,30,multiple_choice,exam,,Property-based tests generate many:,Random inputs|Reports|Teams,0,,,They check rules that should always hold.
+276,31,multiple_choice,exam,,Mutation testing deliberately:,Deletes tests|Breaks code|Fixes code,1,,,A mutant your suite misses reveals a gap.
+277,32,multiple_choice,exam,,A trivial getter rarely needs a:,Name|Parameter|Dedicated test,2,,,The cost of testing it outweighs the value.
+278,28,true_false,exam,,A test may rely on the order tests run in.,,false,,,Each test should set up and clean up its own data.

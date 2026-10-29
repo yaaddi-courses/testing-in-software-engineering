@@ -1,0 +1,3 @@
+term,definition,link,introduced_by_card_id,found_in
+Acting,"The second step of the Arrange-Act-Assert pattern: actually running the code being tested, after Arrange has set up the data it needs.",https://en.wikipedia.org/wiki/Test-driven_development,32,53
+Acts,"The second step of the Arrange-Act-Assert pattern: actually running the code being tested, after Arrange has set up the data it needs.",https://en.wikipedia.org/wiki/Test-driven_development,32,21|41|231|238

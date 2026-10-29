@@ -4,7 +4,7 @@
   "description": "Why tests actually pay off, the different kinds worth writing, and the habits â€” TDD, coverage, flaky-test fixes, CI â€” that keep a suite trustworthy.",
   "image": "cover.png",
   "file": "testing-in-software-engineering.zip",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "tags": [
     "testing",
     "software-engineering",
@@ -26,6 +26,16 @@
       "version": "1.1.0",
       "date": "2026-10-29",
       "notes": "Adds Learn more articles (10, each with a worked example) for the glossary terms; tapping a term now offers \"Read the full explanation\"."
+    },
+    {
+      "version": "1.1.1",
+      "date": "2026-10-29",
+      "notes": "Removes the Wikipedia links from glossary terms that have a Learn more article; the article is now the single place to read more."
+    },
+    {
+      "version": "1.1.2",
+      "date": "2026-10-29",
+      "notes": "Rewrites the Learn more articles in a warmer, teacher-to-student voice; no change to the content or the glossary."
     }
   ],
   "toc": [

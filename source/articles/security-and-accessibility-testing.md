@@ -3,18 +3,18 @@
 **Covers:** security testing, SQL injection, SQL, accessibility testing
 
 ## Two kinds of failure that users cannot report {#overview}
-Most bugs are found because someone notices that something is wrong. Two important kinds go unnoticed by almost everyone: weaknesses that an attacker can exploit and barriers that block people who use the product differently. Both need tests on purpose, since ordinary use will never reveal them.
+Most bugs are found because someone notices that something is wrong. Two important kinds go unnoticed by almost everyone: weaknesses that an attacker can exploit, and barriers that block people who use the product differently. Ordinary use will never reveal either, so both need tests on purpose.
 
 ## security testing {#security-testing}
-Security testing looks for weaknesses before an attacker does. It checks things such as: can someone read another user's data by changing a number in the address, does a page that should need a login really require one, are passwords stored safely, and does the program handle hostile input safely?
+Security testing looks for weaknesses before an attacker does. It asks questions such as: can someone read another user's data by changing a number in the address, does a page that should need a login really require one, are passwords stored safely, and does the program handle hostile input safely?
 
-Part of it can be automated: scanners look for known vulnerable libraries and common mistakes, and tests can check that protected endpoints return an error without a valid login. Part of it needs a person who thinks like an attacker. It works best when done regularly, and early, since fixing a weakness in design is cheaper than after a breach.
+Part of it can be automated. Scanners look for known vulnerable libraries and common mistakes, and tests can check that protected endpoints return an error without a valid login. Part of it needs a person who thinks like an attacker. It works best when done regularly, and early, since fixing a weakness in design is cheaper than after a breach.
 
 ## SQL {#sql}
-SQL, or Structured Query Language, is the standard language for asking questions of a relational database, such as "give me the secret for the user called Ana". Most applications build such queries from what a user types, such as a name in a search box. That is where the risk begins.
+To understand one famous attack, you first need SQL, or Structured Query Language, the standard language for asking questions of a relational database, such as "give me the secret for the user called Ana". Most applications build such queries from what a user types, such as a name in a search box. That is where the risk begins.
 
 ## SQL injection {#sql-injection}
-SQL injection is an attack in which someone types malicious code into an input so that it gets run as part of a database query. If a program builds the query by pasting the user's text into a string, the attacker can change the meaning of the query and read or alter data they should not see.
+Suppose someone types malicious code into an input, and the program runs it as part of a database query. That attack is SQL injection. If a program builds the query by pasting the user's text into a string, the attacker can change the meaning of the query and read or alter data they should not see.
 
 The fix is well known: never build queries by joining strings. Use parameters, also called placeholders, so that the database always treats the input as data, never as code. A security test sends crafted inputs such as `' OR '1'='1` and checks that nothing unexpected happens.
 
@@ -44,7 +44,7 @@ print(len(db.execute(safe, (name,)).fetchall()))
 # 0
 ```
 
-How to read it:
+Let's read it:
 
 1. The attacker's "name" is not a name. It ends the quoted text and adds `OR '1'='1'`, which is always true.
 2. In the unsafe version, the query becomes "where name is 'nobody' or true", so it returns both secrets: 2 rows.
@@ -52,10 +52,12 @@ How to read it:
 
 A security test would assert that the result for this input is 0, and would fail for the unsafe code.
 
-Second, an accessibility check on color contrast. The ratio between black text on white is 21 to 1, the maximum. Medium gray (#777777) on white measures 4.48 to 1, just under the 4.5 target for normal text, even though it looks fine to many people. A tool that computes the ratio catches this at once, while a quick look does not.
+Second, an accessibility check on color contrast. Black text on white has a ratio of 21 to 1, the maximum. Medium gray (#777777) on white measures 4.48 to 1, a little under the 4.5 target for normal text, even though it looks fine to many people. A tool that computes the ratio catches this at once, while a quick look does not.
 
 ## A common mistake {#mistake}
-Treating security and accessibility as a final-week activity. Fixing them late is expensive, and some problems are built into the design. Add a few automated checks to the build from the start. A second mistake is relying only on automated scanners, which miss many problems. Add a manual pass.
+A common slip is treating security and accessibility as a final-week activity. Fixing them late is expensive, and some problems are built into the design. Add a few automated checks to the build from the start.
+
+A second slip is relying only on automated scanners, which miss many problems. Add a manual pass.
 
 ## Key points {#key-points}
 - Security testing looks for weaknesses before attackers find them.

@@ -36,7 +36,7 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 35,7,multiple_choice,exercise,32,What order do the three steps go in?,Arrange first|Assert first|Random order,0,,,You must always start with Arrange because you have to set up your test environment and data before you can execute or check anything.
 36,8,true_false,preview,37,A good test checks one clear thing.,,true,,,True. A test that checks one clear thing points straight at the cause when it fails.
 37,8,multiple_choice,main,,What should a good test check?,One thing|Everything|Nothing,0,,,"A good test is also fast and reliable, not flaky — so when it fails, you immediately know what broke."
-38,8,true_false,exercise,37,"A good test should be reliable, not flaky.",,true,,,True. A reliable test gives the same result every run; a flaky test erodes trust in the suite.
+38,8,true_false,exercise,37,"A good test should be reliable, not flaky.",,true,,,True. A reliable test gives the same result every run; an unstable test erodes trust in the suite.
 39,8,select_blank,exercise,37,A good failing test tells you what ___.,broke|yesterday|boss thinks,0,,,"A good failing test tells you what broke, so you can find the problem without extra digging."
 40,8,multiple_choice,exercise,37,What trait makes a test trustworthy?,Reliability|Long runtime|Vagueness,0,,,Reliability makes a test trustworthy: it fails only when something is actually wrong.
 41,9,true_false,preview,42,A good test name describes the behavior tested.,,true,,,"A good test name acts as documentation, telling you exactly what scenario the test covers and what outcome it expects without needing to look at the code body itself."
